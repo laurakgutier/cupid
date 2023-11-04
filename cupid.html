@@ -146,8 +146,17 @@
                     <option value="genero-fluido">Gênero Fluido</option>
                     <option value="agenero">Agênero</option>
                     <option value="outro-nao">Outro/Prefiro não dizer</option>
-                </select><br>
-                <br>
+                </select><br><br>
+
+                <p>Você faz parte da comunidade LGBT+?</p>
+                <label for="sim">Sim</label>
+                <input type="radio" id="sim" name="LGBT" value="sim">
+
+                <label for="sim">Não</label>
+                <input type="radio" id="nao" name="LGBT" value="nao">
+
+                <br><br>
+
                 <p>Crie um nome de usuário:</p>
                 <label for="usuario">Usuário:</label>
                 <input type="text" name="usuario" id="usuario" required maxlength="30">
@@ -207,25 +216,22 @@
 
                 <label for="cinema">Cinema</label>
                 <input type="checkbox" name="interesses" value="8" id="interesses">
+                
                 <br><br>
                 <p>Que tipo de relacionamento procura?</p>
+                <div class="checkbox-container">
                 <label for="namoro">Namoro</label>
-                <input type="checkbox" name="relacionamento" value="1" id="relacionamento">
+                <input type="radio" name="relacionamento" value="1" id="relacionamento">
 
                 <label for="amizade">Amizade</label>
-                <input type="checkbox" name="relacionamento" value="2" id="relacionamento">
+                <input type="radio" name="relacionamento" value="2" id="relacionamento">
 
                 <label for="relacionamento_aberto">Relacionamento Aberto</label>
-                <input type="checkbox" name="relacionamento" value="3" id="relacionamento">
-
-                <label for="poliamor">Poliamor</label>
-                <input type="checkbox" name="relacionamento" value="4" id="relacionamento">
-
-                <label for="lgbt">LGBT+</label>
-                <input type="checkbox" name="relacionamento" value="5" id="relacionamento">
+                <input type="radio" name="relacionamento" value="3" id="relacionamento">
 
                 <label for="relacionamento_distancia">Relacionamento a distância</label>
-                <input type="checkbox" name="relacionamento" value="6" id="relacionamento">
+                <input type="radio" name="relacionamento" value="4" id="relacionamento">
+
             </fieldset><br>
             <fieldset>
                 <legend>Sobre você</legend>

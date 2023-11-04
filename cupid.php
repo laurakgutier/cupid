@@ -140,6 +140,11 @@
 	//array (6, "Agênero"),
 	//array (7, "Outro/Prefiro não informar")
 	//);
+
+    $LGBT = array(
+        array (1, "Sim"),
+        array (2, "Não")
+    )
 		
 $regiao = array (
 array (1, "Norte"),
@@ -164,9 +169,7 @@ $relacionamento = array (
 array (1, "Namoro"),
 array (2, "Amizade"),
 array (3, "Relacionamento Aberto"),
-array (4, "Poliamor"),
-array (5, "LGBT+"),
-array (6, "Relacionamento a distância")
+array (4, "Relacionamento a distância")
 );
 
 	
@@ -182,7 +185,22 @@ function regioes($nome, $dados){
 
 function regiao(){
 	global $regiao;
-	return regioes("cor_preferida", $regiao);
+	return regioes("regiao", $regiao);
+}
+
+function lgbt_b($nome, $dados){
+	$html="";
+	for ($i=0; $i<=count($dados)-1; $i++){
+		$html.= "<label for=\"${nome}_" . $dados[$i][0] . "\">" .$dados[$i][1] . "</label>\n";
+	    $html.="<input type=\"radio\" name=\"$nome\" value=\"" .$dados[$i][0]. "\" id=\"${nome}_" .
+	    $dados[$i][0]. "\">\n";
+    }
+	return $html;
+}
+
+function lgbt(){
+	global $LGBT;
+	return lgbt_b("lgbt", $regiao);
 }
 	
 	function checkbox_interesse($nome, $dados){
@@ -244,6 +262,11 @@ function checkbox_relacionamento(){
 				</select>
 				<br>
                 <br>
+                <p>Você faz parte da comunidade LGBT+?</p>
+                <?php
+                echo lgbt();
+                ?>
+                <br><br>
                 <p>Crie um nome de usuário:</p>
                 <label for="usuario">Usuário:</label>
                 <input type="text" name="usuario" id="usuario" required maxlength="30">
