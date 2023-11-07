@@ -144,7 +144,7 @@
     $LGBT = array(
         array (1, "Sim"),
         array (2, "Não")
-    )
+    );
 		
 $regiao = array (
 array (1, "Norte"),
@@ -200,8 +200,8 @@ function lgbt_b($nome, $dados){
 
 function lgbt(){
 	global $LGBT;
-	return lgbt_b("lgbt", $regiao);
-}
+	return lgbt_b("lgbt", $LGBT);
+};
 	
 	function checkbox_interesse($nome, $dados){
 	global $interesses;
