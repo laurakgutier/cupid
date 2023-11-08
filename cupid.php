@@ -219,20 +219,20 @@ function checkbox_interesses(){
 	return checkbox_interesse("interesses", $interesses);
 }
 
-function checkbox_relacionamentos($nome, $dados){
+function radio_relacionamentos($nome, $dados){
 	global $relacionamento;
 	$html="";
 	for ($i=0; $i<=count($dados)-1; $i++){
 		$html.= "<label for=\"${nome}_" . $dados[$i][0] . "\">" .$dados[$i][1] . "</label>\n";
-	    $html.="<input type=\"checkbox\" name=\"$nome\" value=\"" .$dados[$i][0]. "\" id=\"${nome}_" .
+	    $html.="<input type=\"radio\" name=\"$nome\" value=\"" .$dados[$i][0]. "\" id=\"${nome}_" .
 	    $dados[$i][0]. "\">\n";
     }
 	return $html;
 }
 
-function checkbox_relacionamento(){
+function radio_relacionamento(){
 	global $relacionamento;
-	return checkbox_relacionamentos("relacionamento", $relacionamento);
+	return radio_relacionamentos("relacionamento", $relacionamento);
 }
 
 
@@ -297,7 +297,7 @@ function checkbox_relacionamento(){
                 <br><br>
                 <p>Que tipo de relacionamento procura?</p>
                 <?php
-				echo checkbox_relacionamento();
+				echo radio_relacionamento();
 				?>
             </fieldset><br>
             <fieldset>
