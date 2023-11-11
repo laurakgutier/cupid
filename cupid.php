@@ -1,9 +1,13 @@
+<?php
+  session_start ();
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
         <meta charset="utf-8">
         <title> Formulário PPI 2 </title>
-        <link rel = "stylesheet" href = "/css/cupid.css">
+        <link rel = "stylesheet" href = "css/cupid.css">
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Pacifico&display=swap" rel="stylesheet">
     </head>
 	<body>
@@ -14,10 +18,12 @@
         <h2>CUPID</h2>
         </div>
         <h1>Faça o seu cadastro para continuar</h1>
-        <form method="get">
+        <form method="post" action = "processar_formulario.php">
 		<?php
 		require_once("banco.php");
         require_once("tabelas.php");
+		
+		$nome = (isset($_POST['nome']) ? $_POST['nome'] : "");
 		
 		$genero = db_genero_select ();
 	
@@ -131,7 +137,7 @@ function radio_relacionamento(){
             <fieldset>
                 <legend> Dados pessoais </legend>
                 <label for="nome">Nome:</label>
-                <input type="text" name="nome" id="nome" required><br><br>
+                <input type="text" name="nome" id="nome" required value="<?=$nome?>"><br><br>
 
                 <label for="data">Data de nascimento:</label>
                 <input type="date" name="data" id="data" required><br><br>
