@@ -5,7 +5,7 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <link rel = "stylesheet" href = "css/home.css">
+    <link rel = "stylesheet" href = "css/homepage.css">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Pacifico&display=swap" rel="stylesheet">
 </head>
 <body>

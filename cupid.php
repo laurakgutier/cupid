@@ -27,46 +27,17 @@
 		
 		$genero = db_genero_select ();
 	
-	//$genero = array(
-	//array (1, "Masculino"),
-	//array (2, "Feminino"),
-	//array (3, "Transgênero"),
-	//array (4, "Não Binário"),
-	//array (5, "Genero Fluido"),
-	//array (6, "Agênero"),
-	//array (7, "Outro/Prefiro não informar")
-	//);
 
-    $LGBT = array(
+		$LGBT = array(
         array (1, "Sim"),
         array (2, "Não")
-    );
+		);
 		
-$regiao = array (
-array (1, "Norte"),
-array (2, "Nordeste"),
-array (3, "Centro-Oeste"),
-array (4, "Sudeste"),
-array (5, "Sul")
-);
-
-$interesses = array (
-array(1, "Leitura"),
-array(2, "Esportes"),
-array(3, "Música"),
-array(4, "Arte"),
-array(5, "Culinária"),
-array(6, "Fotografia"),
-array(7, "Videogames"),
-array(8, "Cinema")
-);
+		$regiao = db_regiao_select ();
+		
+		$interesses = db_interesses_select ();
 	
-$relacionamento = array (
-array (1, "Namoro"),
-array (2, "Amizade"),
-array (3, "Relacionamento Aberto"),
-array (4, "Relacionamento a distância")
-);
+		$relacionamento = db_relacionamento_select ();
 
 	
 function regioes($nome, $dados){
