@@ -136,11 +136,11 @@ function radio_relacionamento(){
                 <br><br>
                 <p>Crie um nome de usuário:</p>
                 <label for="usuario">Usuário:</label>
-                <input type="text" name="usuario" id="usuario" required maxlength="30">
+                <input type="text" name="usuario" id="usuario" required value="<?=$usuario?>" maxlength="30">
                 <br><br>
                 <p>Crie uma senha forte:</p>
                 <label for="senha">Senha:</label>
-                <input type="password" name="senha" id="senha" required maxlength="20">
+                <input type="password" name="senha" id="senha" required value="<?=$senha?>" maxlength="20">
             </fieldset><br>
             <fieldset>
                 <legend>Região</legend>

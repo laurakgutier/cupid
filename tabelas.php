@@ -1,4 +1,6 @@
 <?php
+require_once("banco.php");
+require_once("tabelas.php");
 function db_genero_select(){
 	global $conn;
 	$sth = $conn->prepare("SELECT * FROM TB_GENERO_PPI");

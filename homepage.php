@@ -1,4 +1,6 @@
 <?php
+require_once("banco.php");
+require_once("tabelas.php");
   session_start ();
 ?>
 <!DOCTYPE html>
@@ -19,6 +21,12 @@
 		$nome = isset ($_SESSION ['nome']) ? $_SESSION['nome'] : '';
 		echo "<h1>Bem vindo/a ao Cupid, $nome!</h1>";
 		?>
-    <p> Seu cadastro foi recebido com sucesso! </p>
+    <p> Seu cadastro foi recebido com sucesso! <br> Por favor, faça login. </p>
+	<button id="login">Login</button>
+    <script>
+        document.getElementById("login").addEventListener("click", function(){
+            window.location.href = "login.php";
+        });
+    </script>
 </body>
 </html>

@@ -1,4 +1,6 @@
 <?php
+require_once("banco.php");
+require_once("tabelas.php");
 session_start ();
 
 if ($_SERVER ['REQUEST_METHOD'] === 'POST'){
@@ -16,8 +18,12 @@ $interesses = isset ($_POST['interesses']) ? $_POST['interesses'] : [];
 $relacionamento = isset ($_POST['relacionamento']) ? $_POST ['relacionamento'] : 'Não especificado';
 $biografia = $_POST ['biografia'];
 
-$_SESSION ['dados_formulario'] = compact ('nome', 'data_nascimento', 'email', 'genero', 'LGBT', 'usuario', 'senha', 'regiao',
-'estado', 'cidade', 'interesses', 'relacionamento', 'biografia');
+
+$stmt = $conn->prepare("INSERT INTO tb_pessoa_ppi (nm_pessoa, dt_nascimento, id_genero) VALUES (:nome, :data, :genero)");
+$stmt->bindParam(':nome', $nome);
+$stmt->bindParam(':data', $data);
+$stmt->bindParam(':genero', $genero);
+$stmt->execute();
 
 header ('Location: homepage.php');
 exit();
