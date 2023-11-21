@@ -17,12 +17,13 @@ require_once("tabelas.php");
         </div>
         <h2>CUPID</h2>
         </div>
+		<header>
 		<?php
-		$nome = isset ($_SESSION ['nome']) ? $_SESSION['nome'] : '';
-		echo "<h1>Bem vindo/a ao Cupid, $nome!</h1>";
+		echo "<h1>Bem vindo/a ao Cupid!</h1>";
 		?>
     <p> Seu cadastro foi recebido com sucesso! <br> Por favor, faça login. </p>
 	<button id="login">Login</button>
+	</header>
     <script>
         document.getElementById("login").addEventListener("click", function(){
             window.location.href = "login.php";

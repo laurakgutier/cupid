@@ -24,6 +24,9 @@
         require_once("tabelas.php");
 		
 		$nome = (isset($_POST['nome']) ? $_POST['nome'] : "");
+		$usuario = (isset($_POST['usuario']) ? $_POST['usuario'] : "");
+		$senha = (isset($_POST['senha']) ? $_POST['senha'] : "");
+		$data_nascimento = (isset($_POST['data']) ? $_POST['data'] : "");
 		
 		$genero = db_genero_select ();
 	
@@ -111,7 +114,7 @@ function radio_relacionamento(){
                 <input type="text" name="nome" id="nome" required value="<?=$nome?>"><br><br>
 
                 <label for="data">Data de nascimento:</label>
-                <input type="date" name="data" id="data" required><br><br>
+                <input type="date" name="data" id="data" required value="<?=$data_nascimento?>><br><br>
 
                 <label for="email">E-mail:</label>
                 <input type="email" name="email" id="email" required><br><br>

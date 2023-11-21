@@ -21,7 +21,7 @@ $biografia = $_POST ['biografia'];
 
 $stmt = $conn->prepare("INSERT INTO tb_pessoa_ppi (nm_pessoa, dt_nascimento, id_genero) VALUES (:nome, :data, :genero)");
 $stmt->bindParam(':nome', $nome);
-$stmt->bindParam(':data', $data);
+$stmt->bindParam(':data', $data_nascimento);
 $stmt->bindParam(':genero', $genero);
 $stmt->execute();
 
