@@ -1,4 +1,4 @@
-        body {
+			body {
                 font-family: 'Open Sans', Arial, sans-serif;
                 background-color: #DDB9AB;
                 margin: 0;
@@ -11,6 +11,26 @@
             text-align: center;
             padding: 100px 0;
 			}
+			
+			form {
+                max-width: 600px;
+                margin: 0 auto;
+                background-color: #fff;
+                padding: 20px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            }
+			
+			input[type="submit"], button {
+                background-color: #B93227;
+                color: #fff;
+                border: none;
+                padding: 10px 20px;
+                border-radius: 3px;
+                cursor: pointer;
+                margin-right: 10px;
+            }
     
             h1 {
                 text-align: center;
@@ -64,20 +84,3 @@
             background-color: #DDB9AB;
             }
 			
-			#login {
-            display: inline-block;
-            padding: 15px 30px;
-            background-color: #B93227;
-            color: #fff;
-            font-size: 24px;
-            text-decoration: none;
-            margin-top: 20px;
-            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-
-			#login:hover {
-            background-color: #8b2017;
-			}
-			
-			button {
-				text-align:center;
-			}
