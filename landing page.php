@@ -16,11 +16,15 @@
     <header>
         <h1>Bem-vindo ao Cupid</h1>
         <p>Encontre o amor da sua vida com o Cupid, o melhor site de relacionamentos.</p>
-        <button id="formulario">Cadastre-se Grátis</button>
+        <button id="formulario">Cadastre-se</button>
+		<button id="entrar">Entrar</button>
     </header>
     <script>
         document.getElementById("formulario").addEventListener("click", function(){
             window.location.href = "cupid.php";
+        });
+		document.getElementById("entrar").addEventListener("click", function(){
+            window.location.href = "login.php";
         });
     </script>
     <section>

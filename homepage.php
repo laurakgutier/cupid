@@ -23,11 +23,11 @@ require_once("tabelas.php");
 		?>
     <p> Seu cadastro foi recebido com sucesso! <br> Por favor, faça login. </p>
 	<button id="login">Login</button>
-	</header>
-    <script>
+	<script>
         document.getElementById("login").addEventListener("click", function(){
             window.location.href = "login.php";
         });
     </script>
+	</header>
 </body>
 </html>
