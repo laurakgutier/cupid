@@ -127,7 +127,7 @@ function radio_relacionamento(){
 				?>
                 <br><br>
                 <label for="estado">Informe seu estado (2 letras):</label>
-                <input type="text" name="estado" id="estado" maxlength="2" pattern="[A-Za-z]{2}" title="Ex: SP, RJ, PR.">
+                <input type="text" name="estado" id="estado" maxlength="2" pattern="[A-Z]{2}" title="Ex: SP, RJ, PR.">
                 <br><br>
                 <label for="cidade">Informe sua cidade:</label>
                 <input type="text" name="cidade" id="cidade">

@@ -26,10 +26,21 @@ $stmt->execute();
 
 $id_pessoa = $conn->lastInsertId();
 
+$stmt = $conn->prepare("SELECT id_cidade FROM tb_cidade_ppi WHERE nm_cidade = :cidade AND id_estado = :estado");
+$stmt->bindParam(':cidade', $cidade);
+$stmt->bindParam(':estado', $estado);
+$stmt->execute();
+$result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+if($result){
+	$id_cidade = $result['id_cidade'];
+}
+else{
 $stmt = $conn->prepare("INSERT INTO tb_cidade_ppi (nm_cidade, id_estado) VALUES (:cidade, :estado)");
 $stmt->bindParam(':cidade', $cidade);
 $stmt->bindParam(':estado', $estado);
 $stmt->execute();
+}
 
 $id_cidade = $conn->lastInsertId();
 
