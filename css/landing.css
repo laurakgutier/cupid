@@ -59,10 +59,10 @@
 			margin-right: 10px;
 			border: none;
 			cursor:pointer;
+			text-align: center;
 		}
 
         #formulario {
-            display: flex;
             padding: 15px 30px;
             background-color: #B93227;
             color: #fff;
@@ -77,7 +77,6 @@
         }
 		
 		#entrar {
-            display: flex;
             padding: 15px 30px;
             background-color: #B93227;
             color: #fff;
@@ -90,7 +89,12 @@
         #entrar:hover {
             background-color: #8b2017;
         }
-
+		
+		#botoes {
+			justify-content: center;
+			display: flex;
+			text-align: center;
+		}
 
         #logo {
             text-align: left;
