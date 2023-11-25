@@ -30,6 +30,10 @@
 		$interesses = db_interesses_select ();
 	
 		$relacionamento = db_relacionamento_select ();
+		
+		$estado = db_estado_select ();
+		
+		$cidade = db_cidade_select();
 
 	
 function regioes($nome, $dados){
@@ -126,11 +130,30 @@ function radio_relacionamento(){
 				echo regiao ();
 				?>
                 <br><br>
-                <label for="estado">Informe seu estado (2 letras):</label>
-                <input type="text" name="estado" id="estado" maxlength="2" pattern="[A-Z]{2}" title="Ex: SP, RJ, PR.">
+                <label for="estado">Informe seu estado:</label>
+				<select id="estado" name="estado" required>
+				<option value="" disabled selected>Selecione</option>
+
+				<?php
+				foreach ($estado as $option){
+					$value = $option[0];
+					$label = $option[1];
+					echo "<option value = '$value'>$label</option>";
+				}
+				?> </select>
                 <br><br>
                 <label for="cidade">Informe sua cidade:</label>
-                <input type="text" name="cidade" id="cidade">
+                <select id="cidade" name="cidade" required>
+				<option value="" disabled selected>Selecione</option>
+				
+				<?php
+				foreach ($cidade as $option){
+					$value = $option[0];
+					$label = $option[1];
+					echo "<option value = '$value'>$label</option>";
+				}
+				?> </select>
+				
             </fieldset><br>
             <fieldset>
                 <legend> Interesses </legend>

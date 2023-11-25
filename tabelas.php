@@ -28,4 +28,20 @@ function db_relacionamento_select(){
 	$sth->execute();
 	return $sth->fetchAll();
 }
+
+function db_estado_select(){
+	global $conn;
+	$sth = $conn->prepare("SELECT * FROM TB_ESTADO_PPI");
+	$sth->execute();
+	return $sth->fetchAll();
+}
+
+function db_cidade_select(){
+	global $conn;
+	$sth = $conn->prepare("SELECT * FROM TB_CIDADE_PPI");
+	$sth->execute();
+	return $sth->fetchAll();
+}
+
+
 ?>

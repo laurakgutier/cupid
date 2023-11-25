@@ -16,8 +16,10 @@
     <header>
         <h1>Bem-vindo ao Cupid</h1>
         <p>Encontre o amor da sua vida com o Cupid, o melhor site de relacionamentos.</p>
-        <button id="formulario">Cadastre-se</button>
+        <div id="botoes">
+		<button id="formulario">Cadastre-se</button>
 		<button id="entrar">Entrar</button>
+		</div>
     </header>
     <script>
         document.getElementById("formulario").addEventListener("click", function(){
