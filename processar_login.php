@@ -14,7 +14,7 @@ if ($_SERVER ['REQUEST_METHOD'] === 'POST') {
 
     if (count($result) === 1) {
         $_SESSION['usuario'] = $usuario;
-        header('Location: perfil.php');
+        header('Location: feed.php');
         exit();
     } else {
         header('Location: login.php?erro=credenciais');
