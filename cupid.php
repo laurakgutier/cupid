@@ -89,13 +89,13 @@ function radio_relacionamento(){
             <fieldset>
                 <legend> Dados pessoais </legend>
                 <label for="nome">Nome:</label>
-                <input type="text" name="nome" id="nome" required"><br><br>
+                <input type="text" name="nome" id="nome" placeholder="Digite seu nome" required><br><br>
 
                 <label for="data">Data de nascimento:</label>
                 <input type="date" name="data" id="data" required><br><br>
 
                 <label for="email">E-mail:</label>
-                <input type="email" name="email" id="email" required><br><br>
+                <input type="email" name="email" id="email" placeholder="Digite seu e-mail" required><br><br>
 
                 <label for="genero">Gênero:</label>
 				<select id="genero" name="genero" required>
@@ -118,11 +118,11 @@ function radio_relacionamento(){
                 <br><br>
                 <p>Crie um nome de usuário:</p>
                 <label for="usuario">Usuário:</label>
-                <input type="text" name="usuario" id="usuario" required maxlength="30">
+                <input type="text" name="usuario" id="usuario" placeholder="Digite seu usuário" required maxlength="30">
                 <br><br>
                 <p>Crie uma senha forte:</p>
                 <label for="senha">Senha:</label>
-                <input type="password" name="senha" id="senha" maxlength="20">
+                <input type="password" name="senha" id="senha" placeholder="Digite sua senha" maxlength="20">
             </fieldset><br>
             <fieldset>
                 <legend>Região</legend>
@@ -171,7 +171,7 @@ function radio_relacionamento(){
             <fieldset>
                 <legend>Sobre você</legend>
                 <label for="biografia">Escreva sua biografia:</label><br>
-                <textarea id="biografia" name="biografia" rows="4" cols="30"></textarea>
+                <textarea id="biografia" name="biografia" placeholder="Escreva alguma descrição sobre você" rows="4" cols="30"></textarea>
             </fieldset><br>
 
             <input type="submit" value="Enviar">

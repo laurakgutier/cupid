@@ -45,12 +45,10 @@ $stmt->bindParam(':email', $email);
 $stmt->bindParam(':senha', $senha);
 $stmt->execute();
 
-
-header ('Location: homepage.php');
-exit();
-}
-else {
-	header ('Location: cupid.php');
-	exit();
+    header('Location: login.php?success=true');
+    exit();
+} else {
+    header('Location: cupid.php?error=true');
+    exit();
 }
 ?>

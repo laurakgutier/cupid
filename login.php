@@ -1,6 +1,11 @@
 <?php
 require_once("banco.php"); 
 session_start();
+if (isset($_GET['success']) && $_GET['success'] === 'true') {
+    echo '<script>alert("Cadastro realizado com sucesso! Faça o login.");</script>';
+} elseif (isset($_GET['error']) && $_GET['error'] === 'true') {
+    echo '<script>alert("Erro ao cadastrar. Preencha novamente.");</script>';
+}
 if (isset($_GET['erro'])) {
     $erro = $_GET['erro'];
     if ($erro === 'credenciais') {

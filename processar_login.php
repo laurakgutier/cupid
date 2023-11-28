@@ -14,6 +14,7 @@ if ($_SERVER ['REQUEST_METHOD'] === 'POST') {
 
     if (count($result) === 1) {
         $_SESSION['usuario'] = $usuario;
+        $_SESSION['logado'] = true;
         header('Location: feed.php');
         exit();
     } else {

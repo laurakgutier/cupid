@@ -1,3 +1,7 @@
+<?php
+require_once("verifica_login.php");
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -12,7 +16,22 @@
     <img src="https://images.vexels.com/media/users/3/283687/isolated/preview/6b064c89a89035890e80bd06efe98e60-cupid-illustration-sleeping.png" alt = "Cupid Logo">
   </div>
   <h2>CUPID</h2>
+  <div id="menu">
+  <nav>
+    <a href="perfil.php">Perfil</a>
+    <a class="link" onclick="return sair()" href="logout.php">Sair</a>
+  </nav>
 </div>
+</div>
+<script>
+function sair() {
+    if (confirm('Tem certeza que deseja sair?')) {
+        return true;
+    } else {
+        return false;
+    }
+}
+</script>
 <div id = "feed">
   <div id="class-container">
     <div class="card">
@@ -42,13 +61,7 @@
 </div>
 </div>
 
-  <button id="perfil-btn">Meu Perfil</button>
-
   <script>
-    document.getElementById('perfil-btn').addEventListener('click', function() {
-      window.location.href = 'perfil.php';
-    });
-
     const cards = document.querySelectorAll('.card');
     const likeBtn = document.querySelector('.like-btn');
     const dislikeBtn = document.querySelector('.dislike-btn');
@@ -66,7 +79,6 @@
       cards[currentCardIndex].style.display = 'block'; // Mostra o próximo card
     });
 
-    // Esconde todos os cards, exceto o primeiro
     for (let i = 1; i < cards.length; i++) {
       cards[i].style.display = 'none';
     }
