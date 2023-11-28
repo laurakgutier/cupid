@@ -18,7 +18,7 @@ $perfil = $stmt->fetch(PDO::FETCH_ASSOC);
 $stmt = $conn->prepare("SELECT nm_pessoa, id_genero, id_usuario, is_lgbt, id_cidade, id_tipo_relacionamento
 FROM tb_pessoa_ppi A, tb_usuario_ppi B
 WHERE nm_pessoa = :nome and id_genero = :genero and id_usuario = :usuario and is_lgbt = :lgbt and
-id_cidade = :cidade and id_tipo_relacionamento = :relacionamento;");
+id_cidade = :cidade and id_tipo_relacionamento = :relacionamento and A.id_pessoa = B.id_pessoa");
 $stmt->bindParam(':nome', $nome);
 $stmt->bindParam(':genero', $genero);
 $stmt->bindParam(':usuario', $usuario);
@@ -43,7 +43,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $stmt = $conn->prepare("DELETE FROM tb_pessoa_ppi WHERE id_usuario = :usuario");
         $stmt->bindParam(':usuario', $usuario);
         $stmt->execute();
-        header('Location: landing page.php');
+        header('Location: landing.php');
         exit();
     }
 }

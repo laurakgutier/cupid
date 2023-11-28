@@ -1,7 +1,3 @@
-<?php
-  session_start ();
-?>
-
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
@@ -167,11 +163,6 @@ function radio_relacionamento(){
                 <?php
 				echo radio_relacionamento();
 				?>
-            </fieldset><br>
-            <fieldset>
-                <legend>Sobre você</legend>
-                <label for="biografia">Escreva sua biografia:</label><br>
-                <textarea id="biografia" name="biografia" placeholder="Escreva alguma descrição sobre você" rows="4" cols="30"></textarea>
             </fieldset><br>
 
             <input type="submit" value="Enviar">
