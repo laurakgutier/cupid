@@ -33,7 +33,7 @@ p {
 
 #logo {
     text-align: left;
-    margin-top: 10px;
+    align-items: center;
 }
 
 #logo img {
@@ -44,8 +44,11 @@ p {
 }
 
 #header {
-    display: flex;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #f0f0f0;
 }
 
 #feed {
@@ -115,14 +118,21 @@ p {
     color: white;
   }
 
-  #perfil-btn {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    padding: 10px 20px;
-    background-color: #B93227;
-    color: #fff;
-    border: none;
+  .menu {
+    margin-left: auto;
+  }
+  
+  .menu nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    font-family: 'Pacifico', cursive;
+    margin-left: 20px;
+    padding: 5px 10px;
     border-radius: 5px;
-    cursor: pointer;
+  }
+  
+  .menu a:hover {
+    color: #ff6b6b;
+    background-color: #f7f7f7;
   }
