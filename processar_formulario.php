@@ -17,19 +17,16 @@ $interesses = $_POST['interesses'] ?? [];
 $relacionamento = $_POST ['relacionamento'] ?? '';
 
 
-$stmt = $conn->prepare("INSERT INTO tb_pessoa_ppi (nm_pessoa, dt_nascimento, id_genero) VALUES (:nome, :data, :genero)");
+$stmt = $conn->prepare("INSERT INTO tb_usuario_ppi (id_usuario, nm_usuario, dt_nascimento, ds_email,
+ds_senha, is_lgbt, id_genero, id_cidade, id_tipo_relacionamento, id_interesse)
+VALUES (:usuario, :nome, :data, :email, :senha, :LGBT, :genero, :cidade, :relacionamento)");
+$stmt->bindParam(':usuario', $usuario);
 $stmt->bindParam(':nome', $nome);
 $stmt->bindParam(':data', $data_nascimento);
-$stmt->bindParam(':genero', $genero);
-$stmt->execute();
-
-$id_pessoa = $conn->lastInsertId();
-
-$stmt = $conn->prepare("INSERT INTO tb_usuario_ppi (id_usuario, id_pessoa, is_LGBT, id_cidade, id_tipo_relacionamento) VALUES
-						(:usuario, :id_pessoa, :LGBT, :cidade, :relacionamento)");
-$stmt->bindParam(':usuario', $usuario);
-$stmt->bindParam(':id_pessoa', $id_pessoa);
+$stmt->bindParam(':email', $email);
+$stmt->bindParam(':senha', $senha);
 $stmt->bindParam(':LGBT', $LGBT);
+$stmt->bindParam(':genero', $genero);
 $stmt->bindParam(':cidade', $cidade);
 $stmt->bindParam(':relacionamento', $relacionamento);
 $stmt->execute();
@@ -37,12 +34,6 @@ $stmt->execute();
 $stmt = $conn->prepare("INSERT INTO tb_usuario_interesse_ppi (id_usuario, id_interesse) VALUES (:usuario, :interesses)");
 $stmt->bindParam(':usuario', $usuario);
 $stmt->bindParam(':interesses', $interesses);
-$stmt->execute();
-
-$stmt = $conn->prepare("INSERT INTO tb_login_ppi (id_usuario, ds_email, ds_senha) VALUES (:usuario, :email, :senha)");
-$stmt->bindParam(':usuario', $usuario);
-$stmt->bindParam(':email', $email);
-$stmt->bindParam(':senha', $senha);
 $stmt->execute();
 
     header('Location: login.php?success=true');
