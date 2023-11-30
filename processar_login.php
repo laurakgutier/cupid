@@ -6,7 +6,7 @@ if ($_SERVER ['REQUEST_METHOD'] === 'POST') {
     $usuario = $_POST['usuario'];
     $senha = $_POST['senha'];
 
-    $stmt = $conn->prepare("SELECT * FROM tb_login_ppi WHERE id_usuario = :usuario AND ds_senha = :senha");
+    $stmt = $conn->prepare("SELECT * FROM tb_usuario_ppi WHERE id_usuario = :usuario AND ds_senha = :senha");
     $stmt->bindParam(':usuario', $usuario);
     $stmt->bindParam(':senha', $senha);
     $stmt->execute();

@@ -18,7 +18,7 @@ $relacionamento = $_POST ['relacionamento'] ?? '';
 
 
 $stmt = $conn->prepare("INSERT INTO tb_usuario_ppi (id_usuario, nm_usuario, dt_nascimento, ds_email,
-ds_senha, is_lgbt, id_genero, id_cidade, id_tipo_relacionamento, id_interesse)
+ds_senha, is_lgbt, id_genero, id_cidade, id_tipo_relacionamento)
 VALUES (:usuario, :nome, :data, :email, :senha, :LGBT, :genero, :cidade, :relacionamento)");
 $stmt->bindParam(':usuario', $usuario);
 $stmt->bindParam(':nome', $nome);
