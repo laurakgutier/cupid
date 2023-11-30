@@ -68,15 +68,15 @@ function sair() {
     let currentCardIndex = 0;
 
     likeBtn.addEventListener('click', () => {
-      cards[currentCardIndex].style.display = 'none'; // Esconde o card atual
-      currentCardIndex = (currentCardIndex + 1) % cards.length; // Avança para o próximo card
-      cards[currentCardIndex].style.display = 'block'; // Mostra o próximo card
+      cards[currentCardIndex].style.display = 'none'; 
+      currentCardIndex = (currentCardIndex + 1) % cards.length; 
+      cards[currentCardIndex].style.display = 'block'; 
     });
 
     dislikeBtn.addEventListener('click', () => {
-      cards[currentCardIndex].style.display = 'none'; // Esconde o card atual
-      currentCardIndex = (currentCardIndex + 1) % cards.length; // Avança para o próximo card
-      cards[currentCardIndex].style.display = 'block'; // Mostra o próximo card
+      cards[currentCardIndex].style.display = 'none'; 
+      currentCardIndex = (currentCardIndex + 1) % cards.length; 
+      cards[currentCardIndex].style.display = 'block'; 
     });
 
     for (let i = 1; i < cards.length; i++) {

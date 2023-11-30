@@ -31,15 +31,18 @@ $stmt->bindParam(':cidade', $cidade);
 $stmt->bindParam(':relacionamento', $relacionamento);
 $stmt->execute();
 
-$stmt = $conn->prepare("INSERT INTO tb_usuario_interesse_ppi (id_usuario, id_interesse) VALUES (:usuario, :interesses)");
-$stmt->bindParam(':usuario', $usuario);
-$stmt->bindParam(':interesses', $interesses);
-$stmt->execute();
+$stmtInteresse = $conn->prepare("INSERT INTO tb_usuario_interesse_ppi (id_usuario, id_interesse) VALUES (:usuario, :interesse)");
+
+foreach ($_POST['interesses'] as $interesse) {
+    $stmtInteresse->bindParam(':usuario', $usuario);
+    $stmtInteresse->bindParam(':interesse', $interesse);
+    $stmtInteresse->execute();
+}
 
     header('Location: login.php?success=true');
     exit();
 } else {
-    header('Location: cupid.php?error=true');
+    header('Location: formulario.php?error=true');
     exit();
 }
 ?>

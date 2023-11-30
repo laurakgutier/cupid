@@ -41,7 +41,7 @@ if (isset($_GET['erro'])) {
 		<button id = "cadastro">Não tenho uma conta</button>
 		<script>
         document.getElementById("cadastro").addEventListener("click", function(){
-            window.location.href = "cupid.php";
+            window.location.href = "formulario.php";
         });
     </script>
     </form>

@@ -42,6 +42,4 @@ function db_cidade_select(){
 	$sth->execute();
 	return $sth->fetchAll();
 }
-
-
 ?>

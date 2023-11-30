@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <title> Cadastro CUPID </title>
-        <link rel = "stylesheet" href = "css/cupid.css">
+        <link rel = "stylesheet" href = "css/formulario.css">
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Pacifico&display=swap" rel="stylesheet">
     </head>
 	<body>
@@ -79,9 +79,7 @@ function radio_relacionamento(){
 	return radio_relacionamentos("relacionamento", $relacionamento);
 }
 
-
 	?>
-		
             <fieldset>
                 <legend> Dados pessoais </legend>
                 <label for="nome">Nome:</label>
@@ -111,7 +109,7 @@ function radio_relacionamento(){
 				<label for="sim">Sim</label><br>
 				<input type="radio" id="nao" name="lgbt" value="nao">
 				<label for="nao">Não</label><br>
-                <br><br>
+                
                 <p>Crie um nome de usuário:</p>
                 <label for="usuario">Usuário:</label>
                 <input type="text" name="usuario" id="usuario" placeholder="Digite seu usuário" required maxlength="30">
@@ -155,7 +153,10 @@ function radio_relacionamento(){
                 <legend> Interesses </legend>
                 <p>Selecione seus hobbies.</p>
 				<?php
-				echo checkbox_interesses();
+				foreach ($interesses as $interesse) {
+					echo "<label for=\"interesse_$interesse[0]\">$interesse[1]</label>\n";
+					echo "<input type=\"checkbox\" name=\"interesses[]\" value=\"$interesse[0]\" id=\"interesse_$interesse[0]\">\n";
+				}
 				?>
                 
                 <br><br>

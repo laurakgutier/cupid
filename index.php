@@ -23,7 +23,7 @@
     </header>
     <script>
         document.getElementById("formulario").addEventListener("click", function(){
-            window.location.href = "cupid.php";
+            window.location.href = "formulario.php";
         });
 		document.getElementById("entrar").addEventListener("click", function(){
             window.location.href = "login.php";
@@ -33,9 +33,9 @@
         <h3>Recursos do Cupid</h3>
         <ul>
             <li>Conheça pessoas incríveis</li>
-            <li>Chat ao vivo</li>
             <li>Perfil personalizado</li>
             <li>Combinações baseadas em interesses</li>
+            <li>Dê like nos seus perfis favoritos</li>
         </ul>
     </section>
     
